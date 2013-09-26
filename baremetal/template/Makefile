@@ -8,7 +8,7 @@
 MAIN 		:=hello_world
 MAINC 		:=$(MAIN).c
 BINOUT		:=$(MAIN).bin
-
+SUNXI 		:=/Users/jake/Documents/Projects/u-boot-sunxi
 # ARM Toolchain
 TOOLCHAIN 	:= arm-none-eabi-
 
@@ -32,7 +32,7 @@ CFLAGS		+= -fno-stack-protector -Wno-format-nonliteral -Wno-format-security
 CFLAGS 		+= -fstack-usage -fno-toplevel-reorder -ffunction-sections -fdata-sections
 CFLAGS		+= $(call cc-option,-fno-toplevel-reorder)
 
-LIB	 		:= -I/Users/jake/Documents/Projects/u-boot-sunxi/include
+LIB	 		:= -I$(SUNXI)/include
 LIB 		+= -isystem $(shell $(CC) -print-file-name=include)
 
 LDFLAGS		:= -g -Ttext 0x50000000
